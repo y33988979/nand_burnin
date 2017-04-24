@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QWidget" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>526</width>
+    <height>59</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QPushButton" name="HwInfoBtn">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>11</x>
+     <y>4</y>
+     <width>75</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>60</width>
+     <height>40</height>
+    </size>
+   </property>
+   <property name="baseSize">
+    <size>
+     <width>60</width>
+     <height>30</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>Agency FB</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>硬件信息</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="NandBadCheckBtn">
+   <property name="geometry">
+    <rect>
+     <x>92</x>
+     <y>4</y>
+     <width>75</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>60</width>
+     <height>40</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>Agency FB</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>坏块检测</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="NandPerformanceBtn">
+   <property name="geometry">
+    <rect>
+     <x>173</x>
+     <y>4</y>
+     <width>75</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>60</width>
+     <height>40</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>Agency FB</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>性能测试</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="HelpBtn">
+   <property name="geometry">
+    <rect>
+     <x>254</x>
+     <y>4</y>
+     <width>75</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>60</width>
+     <height>40</height>
+    </size>
+   </property>
+   <property name="font">
+    <font>
+     <family>Agency FB</family>
+     <pointsize>11</pointsize>
+    </font>
+   </property>
+   <property name="text">
+    <string>help</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="SerialBtn">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>335</x>
+     <y>4</y>
+     <width>75</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>串口设置</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>16</width>
+     <height>16</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="Stop">
+   <property name="geometry">
+    <rect>
+     <x>416</x>
+     <y>4</y>
+     <width>75</width>
+     <height>40</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>停止</string>
+   </property>
+  </widget>
+  <zorder>NandBadCheckBtn</zorder>
+  <zorder>NandPerformanceBtn</zorder>
+  <zorder>HelpBtn</zorder>
+  <zorder>SerialBtn</zorder>
+  <zorder>HwInfoBtn</zorder>
+  <zorder>Stop</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
