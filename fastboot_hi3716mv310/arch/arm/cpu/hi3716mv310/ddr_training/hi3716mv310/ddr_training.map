@@ -1,0 +1,109 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x00000000                . = 0x0
+                0x00000000                . = ALIGN (0x4)
+
+.text           0x00001000     0x11f4
+ start.o(.text)
+ .text          0x00001000       0xc4 start.o
+                0x00001000                _start
+                0x00001020                _bss_start
+                0x00001024                _bss_end
+ *(.text)
+ .text          0x000010c4      0xe98 ddr_training.o
+                0x0000112c                memcpy_soc
+                0x0000115c                memset_soc
+                0x00001178                ddrt_write
+                0x00001184                ddrt_read
+                0x000011fc                byte_deskew_judge
+                0x00001efc                ddr_training
+ .text          0x00001f5c       0xf0 uart.o
+                0x00001f5c                uart_early_init
+                0x00001fbc                uart_early_puts
+                0x00001fec                uart_early_put_hex
+                0x00002030                uart_early_putc
+ .text          0x0000204c      0x1a8 libc.o
+                0x0000204c                memcpy
+                0x00002070                memset
+                0x00002090                memcmp
+                0x000020cc                strcmp
+                0x00002100                strncmp
+                0x00002148                strcpy
+                0x00002174                strcat
+                0x000021b0                strchr
+                0x000021d4                strlen
+
+.glue_7         0x000021f4        0x0
+ .glue_7        0x00000000        0x0 linker stubs
+
+.glue_7t        0x000021f4        0x0
+ .glue_7t       0x00000000        0x0 linker stubs
+
+.vfp11_veneer   0x000021f4        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x000021f4        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+                0x000021f4                . = ALIGN (0x4)
+
+.rodata         0x000021f4       0x8f
+ *(SORT(.rodata*))
+ .rodata.str1.1
+                0x000021f4       0x8f ddr_training.o
+                                 0x92 (size before relaxing)
+                0x00002284                . = ALIGN (0x4)
+
+.data           0x00002284        0x8
+ *(.data)
+ .data          0x00002284        0x8 start.o
+ .data          0x0000228c        0x0 ddr_training.o
+ .data          0x0000228c        0x0 uart.o
+ .data          0x0000228c        0x0 libc.o
+                0x0000228c                . = ALIGN (0x4)
+
+.got
+ *(.got)
+                0x0000228c                . = ALIGN (0x4)
+                0x0000228c                __bss_start = .
+
+.bss            0x0000228c      0x984
+ *(.bss)
+ .bss           0x0000228c        0x0 start.o
+ .bss           0x0000228c      0x984 ddr_training.o
+ .bss           0x00002c10        0x0 uart.o
+ .bss           0x00002c10        0x0 libc.o
+                0x00002c10                _end = .
+Address of section .text set to 0x1000
+LOAD start.o
+LOAD ddr_training.o
+LOAD uart.o
+LOAD libc.o
+OUTPUT(ddr_training.elf elf32-littlearm)
+
+.ARM.attributes
+                0x00000000       0x2b
+ .ARM.attributes
+                0x00000000       0x1f start.o
+ .ARM.attributes
+                0x0000001f       0x2f ddr_training.o
+ .ARM.attributes
+                0x0000004e       0x1f uart.o
+ .ARM.attributes
+                0x0000006d       0x2f libc.o
+
+.comment        0x00000000       0x7c
+ .comment       0x00000000       0x3e ddr_training.o
+ .comment       0x0000003e       0x3e libc.o
+
+.note.GNU-stack
+                0x00000000        0x0
+ .note.GNU-stack
+                0x00000000        0x0 ddr_training.o
+ .note.GNU-stack
+                0x00000000        0x0 libc.o
